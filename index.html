@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Up Quantum-Uyo - Quantum Power for a Smarter Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4c51bf;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4c51bf;
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(255,255,255,0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(255,255,255,0.8)); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .main-content {
+            background: white;
+            margin: -2rem 0 0;
+            border-radius: 2rem 2rem 0 0;
+            padding: 3rem 0;
+        }
+
+        .section {
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card h3 {
+            color: #4c51bf;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .event-info {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4c51bf, #667eea);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4c51bf;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .quantum-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="quantum-animation" id="particles"></div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Light Up Quantum-Uyo</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Light Up Quantum-Uyo</h1>
+            <p>"Quantum Power for a Smarter Future"</p>
+            <a href="#register" class="cta-button">Register Now</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="event-info">
+                <h2>Join Us for a Journey into the Quantum Future</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>📅 Date</h4>
+                        <p>March 15-16, 2025</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📍 Location</h4>
+                        <p>Uyo, Akwa Ibom State, Nigeria</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>⏰ Duration</h4>
+                        <p>2 Days of Innovation</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>🎯 Focus</h4>
+                        <p>Quantum Computing & Applications</p>
+                    </div>
+                </div>
+            </div>
+
+            <section id="about" class="section">
+                <h2>About the Event</h2>
+                <div class="event-grid">
+                    <div class="event-card">
+                        <h3>🔬 Research Presentations</h3>
+                        <p>Leading researchers will present cutting-edge quantum science discoveries and breakthroughs that are shaping our understanding of the quantum world.</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>💻 Technology Demos</h3>
+                        <p>Live demonstrations of quantum computing systems, quantum cryptography, and quantum sensing technologies that are revolutionizing industries.</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>🌍 Global Collaboration</h3>
+                        <p>Network with quantum scientists, engineers, and enthusiasts from around the world as we celebrate this International Year of Quantum.</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>🎓 Educational Workshops</h3>
+                        <p>Hands-on workshops for students and professionals to learn quantum programming, quantum algorithms, and quantum circuit design.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="schedule" class="section">
+                <h2>Event Schedule</h2>
+                <div class="event-grid">
+                    <div class="event-card">
+                        <h3>Day 1 - March 15</h3>
+                        <p><strong>9:00 AM</strong> - Opening Ceremony & Keynote</p>
+                        <p><strong>10:30 AM</strong> - Quantum Computing Fundamentals</p>
+                        <p><strong>2:00 PM</strong> - Industry Applications Panel</p>
+                        <p><strong>4:00 PM</strong> - Networking Session</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Day 2 - March 16</h3>
+                        <p><strong>9:00 AM</strong> - Research Presentations</p>
+                        <p><strong>11:00 AM</strong> - Quantum Technology Demos</p>
+                        <p><strong>2:00 PM</strong> - Student Competition</p>
+                        <p><strong>4:00 PM</strong> - Future Outlook & Closing</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="speakers" class="section">
+                <h2>Featured Speakers</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">QR</div>
+                        <h3>Dr. Quantum Researcher</h3>
+                        <p>Leading expert in quantum algorithms and computational complexity theory</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">TI</div>
+                        <h3>Prof. Tech Innovator</h3>
+                        <p>Pioneer in quantum cryptography and quantum communication systems</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-avatar">SE</div>
+                        <h3>Dr. Science Explorer</h3>
+                        <p>Renowned quantum physicist specializing in quantum entanglement studies</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="register" class="section">
+                <h2>Register for the Event</h2>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="affiliation">Institution/Organization</label>
+                            <input type="text" id="affiliation" name="affiliation">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <textarea id="interest" name="interest" rows="3" placeholder="Tell us about your quantum interests..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="cta-button">Register Now</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact Information</h2>
+                <div class="event-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4>📧 Email</h4>
+                            <p>info@lightupquantumuyo.org</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📱 Phone</h4>
+                            <p>+234 XXX XXX XXXX</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>🌐 Website</h4>
+                            <p>www.lightupquantumuyo.org</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📍 Address</h4>
+                            <p>Uyo, Akwa Ibom State, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Light Up Quantum-Uyo. Celebrating the International Year of Quantum Science & Technology.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your registration! We will contact you soon with more details.');
+        });
+
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.event-card, .speaker-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
