@@ -1,5 +1,5 @@
 Quantum Event:
-The event would be a two-day event to be held at the University of Uyo Permanent site in Partnership with IEEE Uyo Branch. People from academia, government, and policy makers, University students, researchers, and lecturers, secondary schools STEM and Teachers, entrepreneurs, startups, and tech enthusiasts, general public with an interest in science and innovation.
+The event would be a One-day event to be held at the University of Uyo Permanent site in Partnership with IEEE Student Club Uyo Branch. People from academia, government, and policy makers, University students, researchers, and lecturers, secondary schools STEM and Teachers, entrepreneurs, startups, and tech enthusiasts, general public with an interest in science and innovation.
 Objectives:
 To raise public awareness about quantum science and its societal impact.
 
